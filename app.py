@@ -568,12 +568,6 @@ def auto_load_data():
             app.logger.error(f"Failed to auto-load CSV: {e}")
 
 
-if __name__ == '__main__':
-    # Auto-load CSV and audio files on startup
-    auto_load_data()
-    app.run(debug=True, host='0.0.0.0', port=3000)
-
-
 @app.route('/version')
 def version():
     from datetime import datetime
@@ -582,3 +576,9 @@ def version():
     <p><strong>Version:</strong> 2.0 - Automated Deployment</p>
     <p><strong>Deployed via:</strong> GitHub Actions + AWS SSM</p>
     '''
+
+if __name__ == '__main__':
+    # Auto-load CSV and audio files on startup
+    auto_load_data()
+    app.run(debug=True, host='0.0.0.0', port=3000)
+
