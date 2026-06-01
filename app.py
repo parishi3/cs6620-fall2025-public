@@ -572,3 +572,13 @@ if __name__ == '__main__':
     # Auto-load CSV and audio files on startup
     auto_load_data()
     app.run(debug=True, host='0.0.0.0', port=3000)
+
+
+@app.route('/version')
+def version():
+    from datetime import datetime
+    return '''
+    <h1>Hello from Automated CI/CD Pipeline!</h1>
+    <p><strong>Version:</strong> 2.0 - Automated Deployment</p>
+    <p><strong>Deployed via:</strong> GitHub Actions + AWS SSM</p>
+    '''
